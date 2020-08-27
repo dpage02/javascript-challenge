@@ -13,7 +13,15 @@ tableData.forEach((sighting) => {
     // loop through object, add td and place value of entry 
     Object.entries(sighting).forEach(([key,value]) => {
         var tdCell = row.append("td");
-        tdCell.text(value[0].toUpperCase() + value.substring(1));
+        if (key === 'city' || key === 'shape'){
+            tdCell.text(value[0].toUpperCase() + value.substring(1));
+        }
+        else if (key === 'state' || key === 'country') {
+            tdCell.text(value.toUpperCase());
+        }
+        else {
+            tdCell.text(value);
+        };
     });
 });
 
