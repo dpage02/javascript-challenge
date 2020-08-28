@@ -14,6 +14,7 @@ tableData.forEach((sighting) => {
     Object.entries(sighting).forEach(([key,value]) => {
         var tdCell = row.append("td");
         if (key === 'city' || key === 'shape'){
+            
             tdCell.text(value[0].toUpperCase() + value.substring(1));
         }
         else if (key === 'state' || key === 'country') {
@@ -27,8 +28,6 @@ tableData.forEach((sighting) => {
 
 // select referenes for form
 var form = d3.select("form");
-// var form = d3.select("#datetime");
-// var form = d3.select(".form-group");
 var button = d3.select("#filter-btn");
 
 // create event handlers for values entered in form 
